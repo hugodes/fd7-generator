@@ -1,3 +1,25 @@
-<form>
-  <input> niveau shop
-</form>
+  <input [(ngModel)]="lowestLevel">
+  <input [(ngModel)]="highestLevel">
+  <input [(ngModel)]="lowestQuality">
+  <input [(ngModel)]="highestQuality">
+  <button (click)="validate()">Generate</button>
+
+
+  <div *ngFor="let item of itemList">
+    <span>Nom : {{item.itemType}}</span>
+    <span>Niveau : {{item.itemLevel}}</span>
+    <span>Qualité : {{item.itemQuality}}</span>
+    <span>Materiel : {{item.itemMaterial}}</span>
+    <span>Type de bonus : {{item.itemBonus.type}}</span>
+    <span>Bonus : {{item.itemBonus.value}}</span>
+    <span *ngFor="let aptitude of item.itemAptitudes; let i = index">
+      Apt{{i}} : {{aptitude.name}}
+      Apt{{i}} Bonus : {{aptitude.value}}
+
+    </span>
+    <span>Fréquence de faculté : {{item.itemFaculty.frequency}}</span>
+    <span>Faculté : {{item.itemFaculty.faculty}}</span>
+    <span>Prix : {{item.itemPrice}}</span>
+
+  </div>
+

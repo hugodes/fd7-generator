@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Item} from "./classes/item";
+import {ItemService} from "./item-service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  shoplevel: number
+
+  public lowestLevel: number;
+  public highestLevel: number;
+  public lowestQuality: number;
+  public highestQuality: number;
+
+  itemList: Item[];
+
+  constructor(public itemService: ItemService) {
+    this.itemList = [];
+  }
+
+
+  public validate(): void {
+    for (let i = 0; i < 20; i++) {
+      this.itemList.push(new Item(this.itemService));
+    }
+  }
 }
