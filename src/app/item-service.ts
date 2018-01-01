@@ -65,29 +65,44 @@ export class ItemService {
     return this.itemTypes[randomIndex];
   }
 
-  public getItemMaterial(itemQuality): string {
-    let tier = '';
-    if (itemQuality >= 0 && itemQuality <= 5) {
-      tier = 'tier1';
-    } else if (itemQuality >= 6 && itemQuality <= 10) {
-      tier = 'tier2';
-    } else if (itemQuality >= 11 && itemQuality <= 15) {
-      tier = 'tier3';
-    } else if (itemQuality >= 16 && itemQuality <= 20) {
-      tier = 'tier4';
-    } else if (itemQuality >= 21 && itemQuality <= 25) {
-      tier = 'tier5';
-    }
-    const randomIndex = getRndInteger(0, this.itemMaterials[tier].length - 1);
-    return this.itemMaterials[tier][randomIndex];
+  public getItemMaterial(tier: string): any {
+    const randomIndex = getRndInteger(0, this.materialTiers[tier].length - 1);
+    return this.materialTiers[tier][randomIndex];
   }
 
   public getItemBonus(itemLevel: number): ItemBonus {
     return new ItemBonus('Dégat', getRndInteger(0, itemLevel * 13));
   }
 
-  public getItemAptitude(): ItemAptitude {
-    return new ItemAptitude(this.itemAptitudeNames[0], 3);
+  public getItemAptitudes(material: any, tier): ItemAptitude[] {
+    const result = [];
+    let numberOfAptitudes = 0;
+    if (tier === 'tier1') {
+      numberOfAptitudes = 0;
+    } else if (tier === 'tier2') {
+      numberOfAptitudes = 1;
+    } else if (tier === 'tier3') {
+      numberOfAptitudes = 2;
+    } else if (tier === 'tier4') {
+      numberOfAptitudes = 3;
+    } else if (tier === 'tier2') {
+      numberOfAptitudes = 3;
+    }
+
+
+    const availableAptitudes = [];
+    for (let i = 0; i < material.aptitudes.length; i++) {
+      if (material.aptitudes[i] > 0) {
+        availableAptitudes.push({aptName: this.aptitudes[i], aptValue: material.aptitudes[i]});
+      }
+    }
+
+    for (let i = 0; i < numberOfAptitudes; i++) {
+      const randomIndex = getRndInteger(0, availableAptitudes.length - 1);
+      result.push(new ItemAptitude(availableAptitudes[randomIndex].aptName, availableAptitudes[randomIndex].aptValue));
+      availableAptitudes.splice(randomIndex, 1);
+    }
+    return result;
   }
 
   public getItemFaculty(): ItemFaculty {
