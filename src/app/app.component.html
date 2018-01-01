@@ -1,25 +1,53 @@
-  <input type="number" [(ngModel)]="lowestLevel">
-  <input type="number" [(ngModel)]="highestLevel">
-  <input type="number" [(ngModel)]="lowestQuality">
-  <input type="number" [(ngModel)]="highestQuality">
-  <button (click)="validate()">Generate</button>
+<label>Niveau min</label>
+<input type="number" [(ngModel)]="lowestLevel">
+<br>
+<label>Niveau max</label>
+<input type="number" [(ngModel)]="highestLevel">
+<br>
+<label>Qualité min (0-25)</label>
+<input type="number" [(ngModel)]="lowestQuality">
+<br>
+<label>Qualité max (0-25)</label>
+<input type="number" [(ngModel)]="highestQuality">
+<br>
+<button (click)="validate()">Generate</button>
 
+  <table>
+    <tr>
+      <th>Nom</th>
+      <th>Niveau</th>
+      <th>Qualité</th>
+      <th>Materiel</th>
+      <th>Type de bonus</th>
+      <th>Bonus</th>
+      <th>Apt1</th>
+      <th>Apt1 Bonus</th>
+      <th>Apt2</th>
+      <th>Apt2 Bonus</th>
+      <th>Apt3</th>
+      <th>Apt3 Bonus</th>
+      <th>Fréquence de faculté</th>
+      <th>Faculté</th>
+      <th>Prix</th>
+    </tr>
+    <tr *ngFor="let item of itemList">
+      <td>{{item.itemType}}</td>
+      <td>{{item.itemLevel}}</td>
+      <td>{{item.itemQuality}}</td>
+      <td>{{item.itemMaterial.name}}</td>
+      <td>{{item.itemBonus.type}}</td>
+      <td>{{item.itemBonus.value}}</td>
+      <td>{{item.itemAptitudes[0].name}}</td>
+      <td>{{item.itemAptitudes[0].value}}</td>
+      <td>{{item.itemAptitudes[1].name}}</td>
+      <td>{{item.itemAptitudes[1].value}}</td>
+      <td>{{item.itemAptitudes[2].name}}</td>
+      <td>{{item.itemAptitudes[2].value}}</td>
+      <td>{{item.itemFaculty.frequency}}</td>
+      <td>{{item.itemFaculty.faculty}}</td>
+      <td>{{item.itemPrice}}</td>
 
-  <div *ngFor="let item of itemList">
-    <span>Nom : {{item.itemType}}</span>
-    <span>Niveau : {{item.itemLevel}}</span>
-    <span>Qualité : {{item.itemQuality}}</span>
-    <span>Materiel : {{item.itemMaterial}}</span>
-    <span>Type de bonus : {{item.itemBonus.type}}</span>
-    <span>Bonus : {{item.itemBonus.value}}</span>
-    <span *ngFor="let aptitude of item.itemAptitudes; let i = index">
-      Apt{{i}} : {{aptitude.name}}
-      Apt{{i}} Bonus : {{aptitude.value}}
+    </tr>
+  </table>
 
-    </span>
-    <span>Fréquence de faculté : {{item.itemFaculty.frequency}}</span>
-    <span>Faculté : {{item.itemFaculty.faculty}}</span>
-    <span>Prix : {{item.itemPrice}}</span>
-
-  </div>
 
