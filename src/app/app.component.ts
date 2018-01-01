@@ -19,10 +19,10 @@ export class AppComponent {
 
   constructor(public itemService: ItemService) {
     this.itemList = [];
-    this.lowestLevel = 20;
-    this.highestLevel = 25;
-    this.highestQuality = 20;
-    this.lowestQuality = 25;
+    /*this.lowestLevel = 11;
+    this.highestLevel = 12;
+    this.highestQuality = 1;
+    this.lowestQuality = 5;*/
   }
 
 

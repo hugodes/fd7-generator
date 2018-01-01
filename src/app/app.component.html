@@ -43,8 +43,8 @@
       <td *ngIf="item.itemAptitudes[1]; else thenTemplate">{{item.itemAptitudes[1].value}}</td>
       <td *ngIf="item.itemAptitudes[2]; else thenTemplate">{{item.itemAptitudes[2].name}}</td>
       <td *ngIf="item.itemAptitudes[2]; else thenTemplate">{{item.itemAptitudes[2].value}}</td>
-      <td>{{item.itemFaculty.frequency}}</td>
-      <td>{{item.itemFaculty.faculty}}</td>
+      <td *ngIf="item.itemFaculty; else thenTemplate">{{item.itemFaculty.frequency}}</td>
+      <td *ngIf="item.itemFaculty; else thenTemplate">{{item.itemFaculty.faculty}}</td>
       <td>{{item.itemPrice}}</td>
       <ng-template #thenTemplate><td></td></ng-template>
 
