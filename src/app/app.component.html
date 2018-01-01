@@ -1,16 +1,22 @@
-<label>Niveau min</label>
-<input type="number" [(ngModel)]="lowestLevel">
-<br>
-<label>Niveau max</label>
-<input type="number" [(ngModel)]="highestLevel">
-<br>
-<label>Qualité min (0-25)</label>
-<input type="number" [(ngModel)]="lowestQuality">
-<br>
-<label>Qualité max (0-25)</label>
-<input type="number" [(ngModel)]="highestQuality">
-<br>
-<button (click)="validate()">Generate</button>
+<div>
+  <img style="float: left" src="assets/logo_5_jug.png">
+  <label>Niveau min</label>
+  <input type="number" [(ngModel)]="lowestLevel">
+  <br>
+  <label>Niveau max</label>
+  <input type="number" [(ngModel)]="highestLevel">
+  <br>
+  <label>Qualité min (0-25)</label>
+  <input type="number" [(ngModel)]="lowestQuality">
+  <br>
+  <label>Qualité max (0-25)</label>
+  <input type="number" [(ngModel)]="highestQuality">
+  <br>
+  <button (click)="validate()">Generate</button>
+</div>
+
+
+
 
   <table>
     <tr>

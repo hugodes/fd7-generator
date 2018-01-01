@@ -27,9 +27,15 @@ export class AppComponent {
 
 
   public validate(): void {
-    this.itemList = [];
-    for (let i = 0; i < 20; i++) {
-      this.itemList.push(new Item(this.itemService, this.lowestLevel, this.highestLevel, this.lowestQuality, this.highestQuality));
+    if (this.highestLevel && this.lowestLevel && this.lowestQuality && this.highestQuality) {
+      this.itemList = [];
+      for (let i = 0; i < 20; i++) {
+        this.itemList.push(new Item(this.itemService, this.lowestLevel, this.highestLevel, this.lowestQuality, this.highestQuality));
+      }
     }
+    else {
+      window.alert("Le fils des septs à vu que vous n'avez pas rempli tout les champs");
+    }
+
   }
 }
