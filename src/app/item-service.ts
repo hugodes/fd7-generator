@@ -6,7 +6,11 @@ import {ItemFaculty} from "./classes/item-faculty";
 @Injectable()
 export class ItemService {
   private itemTypes = [
-    'Epée'
+    'Arc', 'Sarbacane', 'Arbalète', 'Frondes', 'Shuriken', 'Epée une main', 'Glaive', 'Fleuret',
+    'Hallebarde', 'Faux', 'Ache une main', 'Fouet', 'Filet', 'Marteau (1H)', 'Katana', 'Bô (bâton)',
+    'Hache Py', 'Fil de soie', 'Hache à deux mains (guerres et batailles)', 'Epée à deux mains (guerres et batailles)',
+    'Marteau à deux mains (guerres et batailles)', 'Dague', 'Griffes', 'Nunchaku', 'Corde à piano', 'Arts martiaux', 'Epée coulissante',
+    'Epée ivy', 'Arc épée', 'Marteau sanglé', 'Hache sanglé', 'Krull'
   ];
 
   private itemMaterials = [
