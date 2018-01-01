@@ -75,19 +75,76 @@ export class ItemService {
 
   private materialTiers = {
     tier1: [
-      this.materials.cuivre_bronze
+      this.materials.cuivre_bronze,
+      this.materials.acier,
+      this.materials.septembre,
+      this.materials.cuir_chene,
+      this.materials.cuir_tane,
+      this.materials.cuir_travaille,
+      this.materials.acajou,
+      this.materials.cristal_flamme,
+      this.materials.cristal_mehyr
     ],
     tier2: [
-      this.materials.cuivre_bronze
+      this.materials.evenole,
+      this.materials.titane,
+      this.materials.novembre,
+      this.materials.acajou,
+      this.materials.grafite,
+      this.materials.cristal_pourpre,
+      this.materials.cristal_lumineux,
+      this.materials.cristal_clair,
+      this.materials.energie_magique,
+      this.materials.energie_sci
     ],
     tier3: [
-      this.materials.cuivre_bronze
+      this.materials.titane,
+      this.materials.novembre,
+      this.materials.plurinium,
+      this.materials.grafite,
+      this.materials.carbonite,
+      this.materials.cristal_lumineux,
+      this.materials.cristal_clair,
+      this.materials.cristal_sang,
+      this.materials.energie_sci,
+      this.materials.energie_semaca,
+      this.materials.magie_fumee,
+      this.materials.magie_spectrale,
+      this.materials.magie_elem
     ],
     tier4: [
-      this.materials.cuivre_bronze
+      this.materials.novembre,
+      this.materials.plurinium,
+      this.materials.adamite,
+      this.materials.carbonite,
+      this.materials.ossements,
+      this.materials.cristal_clair,
+      this.materials.cristal_sang,
+      this.materials.cristal_haine,
+      this.materials.energie_semaca,
+      this.materials.energie_esprit,
+      this.materials.energie_antimatiere,
+      this.materials.energie_humaine,
+      this.materials.magie_spectrale,
+      this.materials.magie_elem,
+      this.materials.magie_invisible,
+      this.materials.magie_reves
     ],
     tier5: [
-      this.materials.cuivre_bronze
+      this.materials.adamite,
+      this.materials.decembre,
+      this.materials.karag,
+      this.materials.animaux_leg,
+      this.materials.cristal_haine,
+      this.materials.cristaline,
+      this.materials.cristal_pur,
+      this.materials.energie_instable,
+      this.materials.energie_pure,
+      this.materials.energie_semaca,
+      this.materials.magie_reves,
+      this.materials.magie_drag,
+      this.materials.magie_ombre,
+      this.materials.magie_imagi
     ],
   };
 
