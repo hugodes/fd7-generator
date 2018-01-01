@@ -10,19 +10,39 @@ export class ItemService {
     'Epée'
   ];
 
-  private itemMaterials = {
-    tier1: ['Cuivre bronze'],
-    tier2: ['Septembre'],
-    tier3: ['Titane'],
-    tier4: ['Novembre'],
-    tier5: ['Adamite']
+  private aptitudes = [
+    'Vibration sonore raisonance',
+    'Onde de choc intertie',
+    'Flexibilité Forme',
+    'Magie',
+    'Teneur'];
+
+  private materials = {
+    cuivre_bronze: {
+      name: 'cuivre bronze',
+      aptitudes: [1, 0, 2, 0, 3]
+    }
+  };
+
+  private materialTiers = {
+    tier1: [
+      this.materials.cuivre_bronze
+    ],
+    tier2: [
+      this.materials.cuivre_bronze
+    ],
+    tier3: [
+      this.materials.cuivre_bronze
+    ],
+    tier4: [
+      this.materials.cuivre_bronze
+    ],
+    tier5: [
+      this.materials.cuivre_bronze
+    ],
   };
   private itemBonusTypes = [
     'Bonus proba'
-  ];
-
-  private itemAptitudeNames = [
-    'Slot magique'
   ];
 
   private itemFaculties = [
