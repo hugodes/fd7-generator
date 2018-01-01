@@ -24,7 +24,7 @@ export class Item {
     this.itemBonus = this.itemService.getItemBonus(this.itemLevel);
     this.itemAptitudes = this.itemService.getItemAptitudes(this.itemMaterial, this.getTier());
     this.itemFaculty = this.itemService.getItemFaculty(this.getTier());
-    this.itemPrice = 200;
+    this.itemPrice = this.itemLevel * this.itemQuality;
 
   }
 
