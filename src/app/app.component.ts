@@ -22,8 +22,9 @@ export class AppComponent {
 
 
   public validate(): void {
+    this.itemList = [];
     for (let i = 0; i < 20; i++) {
-      this.itemList.push(new Item(this.itemService));
+      this.itemList.push(new Item(this.itemService, this.lowestLevel, this.highestLevel, this.lowestQuality, this.highestQuality));
     }
   }
 }
