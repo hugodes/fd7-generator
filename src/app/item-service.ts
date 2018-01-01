@@ -23,7 +23,7 @@ export class ItemService {
 
   private materials = {
     cuivre_bronze: {
-      name: '',
+      name: 'Cuivre Bronze',
         aptitudes: [0, 0, 0, 0, 0]
     },
     acier: {name: 'Acier', aptitudes: [0, 0, 0, 0, 0]},
@@ -369,9 +369,11 @@ export class ItemService {
     }
 
     for (let i = 0; i < numberOfAptitudes; i++) {
-      const randomIndex = getRndInteger(0, availableAptitudes.length - 1);
-      result.push(new ItemAptitude(availableAptitudes[randomIndex].aptName, availableAptitudes[randomIndex].aptValue));
-      availableAptitudes.splice(randomIndex, 1);
+      if (availableAptitudes.length > 0) {
+        const randomIndex = getRndInteger(0, availableAptitudes.length - 1)
+        result.push(new ItemAptitude(availableAptitudes[randomIndex].aptName, availableAptitudes[randomIndex].aptValue));
+        availableAptitudes.splice(randomIndex, 1);
+      }
     }
     return result;
   }
