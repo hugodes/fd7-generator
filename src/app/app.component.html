@@ -37,15 +37,16 @@
       <td>{{item.itemMaterial.name}}</td>
       <td>{{item.itemBonus.type}}</td>
       <td>{{item.itemBonus.value}}</td>
-      <td>{{item.itemAptitudes[0].name}}</td>
-      <td>{{item.itemAptitudes[0].value}}</td>
-      <td>{{item.itemAptitudes[1].name}}</td>
-      <td>{{item.itemAptitudes[1].value}}</td>
-      <td>{{item.itemAptitudes[2].name}}</td>
-      <td>{{item.itemAptitudes[2].value}}</td>
+      <td *ngIf="item.itemAptitudes[0]; else thenTemplate">{{item.itemAptitudes[0].name}}</td>
+      <td *ngIf="item.itemAptitudes[0]; else thenTemplate">{{item.itemAptitudes[0].value}}</td>
+      <td *ngIf="item.itemAptitudes[1]; else thenTemplate">{{item.itemAptitudes[1].name}}</td>
+      <td *ngIf="item.itemAptitudes[1]; else thenTemplate">{{item.itemAptitudes[1].value}}</td>
+      <td *ngIf="item.itemAptitudes[2]; else thenTemplate">{{item.itemAptitudes[2].name}}</td>
+      <td *ngIf="item.itemAptitudes[2]; else thenTemplate">{{item.itemAptitudes[2].value}}</td>
       <td>{{item.itemFaculty.frequency}}</td>
       <td>{{item.itemFaculty.faculty}}</td>
       <td>{{item.itemPrice}}</td>
+      <ng-template #thenTemplate><td></td></ng-template>
 
     </tr>
   </table>
