@@ -23,7 +23,7 @@ export class Item {
     this.itemMaterial = this.itemService.getItemMaterial(this.getTier());
     this.itemBonus = this.itemService.getItemBonus(this.itemLevel);
     this.itemAptitudes = this.itemService.getItemAptitudes(this.itemMaterial, this.getTier());
-    this.itemFaculty = this.itemService.getItemFaculty();
+    this.itemFaculty = this.itemService.getItemFaculty(this.getTier());
     this.itemPrice = 200;
 
   }

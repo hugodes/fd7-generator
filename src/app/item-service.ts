@@ -45,9 +45,6 @@ export class ItemService {
       this.materials.cuivre_bronze
     ],
   };
-  private itemBonusTypes = [
-    'Bonus proba'
-  ];
 
   private itemFaculties = [
     'Muto / perdo vim'
@@ -85,7 +82,7 @@ export class ItemService {
       numberOfAptitudes = 2;
     } else if (tier === 'tier4') {
       numberOfAptitudes = 3;
-    } else if (tier === 'tier2') {
+    } else if (tier === 'tier5') {
       numberOfAptitudes = 3;
     }
 
@@ -105,7 +102,12 @@ export class ItemService {
     return result;
   }
 
-  public getItemFaculty(): ItemFaculty {
-    return new ItemFaculty(this.itemFaculties[0], this.itemFacutlyFrequencies[0]);
+  public getItemFaculty(tier): ItemFaculty {
+    let result = null;
+    if (tier === 'tier5') {
+      const randomIndex = getRndInteger(0, this.itemFaculties.length - 1);
+      result =  new ItemFaculty(this.itemFaculties[randomIndex], '1 fois toutes les 3 lunes');
+    }
+    return result;
   }
 }

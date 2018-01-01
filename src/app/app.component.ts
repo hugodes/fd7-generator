@@ -18,6 +18,8 @@ export class AppComponent {
 
   constructor(public itemService: ItemService) {
     this.itemList = [];
+    this.lowestLevel = 20;
+    this.highestLevel = 25;
     this.highestQuality = 20;
     this.lowestQuality = 25;
   }
