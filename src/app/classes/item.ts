@@ -2,6 +2,7 @@ import {ItemAptitude} from "./item-aptitude";
 import {ItemFaculty} from "./item-faculty";
 import {ItemService} from "../item-service";
 import {ItemBonus} from "./item-bonus";
+import {getRndInteger} from "../utils";
 
 export class Item {
 
@@ -14,12 +15,13 @@ export class Item {
   public itemFaculty: ItemFaculty;
   public itemPrice: number;
 
-  constructor(public itemService: ItemService) {
-    this.itemLevel = 20;
-    this.itemQuality = 20;
+  constructor(public itemService: ItemService, lowestLevel: number, highestLevel: number, lowestQuality: number, highestQuality: number) {
+    this.itemLevel = getRndInteger(lowestLevel, highestLevel);
+    this.itemQuality = getRndInteger(lowestQuality, highestQuality);
+
     this.itemType = this.itemService.getItemType();
-    this.itemMaterial = this.itemService.getItemMaterial();
-    this.itemBonus = this.itemService.getItemBonus();
+    this.itemMaterial = this.itemService.getItemMaterial(this.itemQuality);
+    this.itemBonus = this.itemService.getItemBonus(this.itemLevel);
     this.itemAptitudes = [];
     for (let i = 0; i < 3; i++) {
       this.itemAptitudes.push(this.itemService.getItemAptitude());
