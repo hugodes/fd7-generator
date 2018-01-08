@@ -20,6 +20,7 @@
 
   <table>
     <tr>
+      <th>Rareté</th>
       <th>Nom</th>
       <th>Niveau</th>
       <th>Qualité</th>
@@ -37,6 +38,7 @@
       <th>Prix</th>
     </tr>
     <tr *ngFor="let item of itemList">
+      <td [ngClass]="{legendaire: item.getTier() ==='tier5', epique: item.getTier() === 'tier4', rare: item.getTier() === 'tier3', commun: item.getTier() === 'tier2'}"></td>
       <td>{{item.itemType}}</td>
       <td>{{item.itemLevel}}</td>
       <td>{{item.itemQuality}}</td>
